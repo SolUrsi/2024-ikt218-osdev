@@ -1,7 +1,7 @@
 #ifndef GDT_H
 #define GDT_H
 
-#include "stdint.h"
+#include "libc/stdint.h"
 /*
     Sources:
     https://www.youtube.com/watch?v=jwulDRMQ53I&t=10s&ab_channel=OliveStem

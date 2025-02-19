@@ -1,4 +1,4 @@
-#include "gdt.h"
+#include "../include/gdt.h"
 
 extern void gdt_flush(uint32_t);
 
@@ -20,9 +20,9 @@ void initGDT(){
 
 void setGDTGate(uint32_t num, uint32_t base, uint32_t limit, 
 uint8_t access, uint8_t gran){
-    gdt.entries[num].base_low = (base & 0xFFFF);
-    gdt.entries[num].base_middle = (base >> 16) & 0xFF;
-    gdt.entries[num].base_high = (base >> 24) & 0xFF;
+    gdt_entries[num].base_low = (base & 0xFFFF);
+    gdt_entries[num].base_middle = (base >> 16) & 0xFF;
+    gdt_entries[num].base_high = (base >> 24) & 0xFF;
 
     gdt_entries[num].limit_low = (limit & 0xFFFF);
     gdt_entries[num].flags = (limit >> 16) & 0x0F;
